@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <audio id="song">
+            <source src="sining.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player">
+            <img src="https://i.scdn.co/image/ab67616d0000b27319f16592da6f918a04ef6b7c">
+            <div class="item-container">
+                <h1>Sining</h1>
+                <h4><small>Dionela</small></h4>
+                <div class="lyricicon">
+                    <i class="fa-solid fa-microphone-lines" onclick="lyrics()"></i>
+                </div>
+                <input type="range" value="0" id="progress">
+                <div class="range">
+                    <p ><small id="current-time">0:00</small></p>
+                    <p ><small id="end-time">0:32</small></p>
+                </div>
+                <div class="controls">
+                    <i class="fa-solid fa-backward-step"></i>
+                    <i class="fa-solid fa-play" id="play" onclick="pauseplay()"></i>
+                    <i class="fa-solid fa-forward-step"></i>
+                </div>
+            </div>
+        </div>
+        <div class="lyrics">
+            <i class="fa-solid fa-arrow-left" id="back" onclick="back()"></i>
+            <div class="lyricContainer">
+                <h2 id="l1"><em>Ikaw ay tila sining sa museong 'di naluluma</em></h2>
+                <h2 id="l2"><em>Binibini kong ginto hanggang kaluluwa</em></h2>
+                <h2 id="l3"><em>Gonna keep you like the nu couché</em></h2>
+                <h2 id="l4"><em>All my life</em></h2>
+                <h2 id="l5"><em>At kung sa tingin mo na ang oras mo'y lumipas na</em></h2>
+                <h2 id="l6"><em>Ako'y patuloy na mararahuyo sa ganda</em></h2>
+                <h2 id="l7"><em>I'd still kiss you every single day</em></h2>
+                <h2 id="l8"><em>All my life</em></h2>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
