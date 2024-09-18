@@ -8,8 +8,20 @@
     <title>Document</title>
 </head>
 <body>
+    <iframe name="dummyframe" style="display: none;"></iframe>
+    <div class="log-in">
+        <div class="log-in-form">
+            <h1>Log In</h1>
+            <form target="dummyframe">
+                <input type="text" id="user" required placeholder="Username">
+                <input type="password" id="pass" required placeholder="Password">
+                
+            </form>
+            <button id="submit" onclick="submit()">Submit</button>
+        </div>
+    </div>
     <div class="container">
-        <audio id="song">
+        <audio id="song" autoplay="false">
             <source src="sining.mp3" type="audio/mpeg">
         </audio>
         <div class="player">

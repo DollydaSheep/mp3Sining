@@ -8,6 +8,41 @@ let displayPlayer = document.querySelector(".player");
 let displayLyrics = document.querySelector(".lyrics");
 let time = 0;
 
+let user = document.getElementById("user");
+let pass = document.getElementById("pass");
+
+let u = 'mel';
+let p = 'melgwapo';
+
+
+let container = document.querySelector('.container');
+let logContainer = document.querySelector('.log-in');
+let logIn = 0;
+
+song.autoplay = false;
+
+function submit(){
+    console.log(user.value);
+    console.log(pass.value.length);
+    if(user.value == u && pass.value == p){
+        container.style.filter = "blur(0px)";
+        logContainer.style.transform = "translateY(-100%)";
+        logIn = 1;
+    }else if(pass.value.length < 8){
+        alert("Password must be 8 characters long");
+    }else{
+        alert("Wrong Username and Password");
+    }
+}
+
+
+container.addEventListener('mouseenter',function(){
+    if(logIn!=1){
+        container.style.filter = "blur(20px)";
+        logContainer.style.transform = "translateY(100%)";
+    }
+})
+
 song.onloadedmetadata = function(){
     progress.max = song.duration;
     progress.value = song.currentTime;
@@ -71,8 +106,8 @@ function pauseplay(){
     }
 }
 
-if(song.play()){
-    setInterval(()=>{
+song.addEventListener('play',() => {
+    setInterval(() => {
         progress.value = song.currentTime;
         time = progress.value;
         var min = Math.floor(progress.value / 60);
@@ -165,9 +200,8 @@ if(song.play()){
             play.classList.remove("fa-pause");
             play.classList.add("fa-play");
         }
-
-    },500);
-}
+    }, 500);
+})
 
 progress.onchange = function(){
 
